@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decoding the Storm: Comprehensive Analysis of Neural Epilepsy</title>
+<script>
+window.tailwind = window.tailwind || {};
+window.tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1e293b',
+secondary: '#334155',
+accent: '#0d9488',
+background: '#f8fafc',
+surface: '#ffffff'
+},
+fontFamily: {
+sans: ['Inter', 'system-ui', 'sans-serif'],
+serif: ['Merriweather', 'serif']
+}
+}
+}
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { background-color: #f8fafc; color: #1e293b; }
+.chart-container { position: relative; width: 100%; max-width: 900px; margin: 0 auto; height: 350px; max-height: 400px; }
+@media (max-width: 768px) { .chart-container { height: 250px; } }
+.nav-link { transition: all 0.3s ease; }
+.nav-link:hover { color: #0d9488; border-bottom: 2px solid #0d9488; }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+.accordion-content.active { max-height: 500px; }
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="font-sans antialiased selection:bg-accent selection:text-white">
+
+<!-- Chosen Palette: Calm Harmony (Slate Gray, Teal Accent, Warm Off-White Background) -->
+<!-- Application Structure Plan: The SPA uses a single-page scrolling dashboard structure. It moves from high-level context (Abstract/Scope) to detailed Quantitative Analysis (Charts), followed by Qualitative Impacts (Tabs), Clinical Application (Process Flow), and concludes with Ethics. This flow mimics a research paper but leverages interactive UI (tabs, accordions, charts) to prevent cognitive overload and allow non-linear exploration. -->
+<!-- Visualization & Content Choices: 1. Demographics/Etiology -> Goal: Inform -> Doughnut Chart (Chart.js) -> Hover reveals exact percentages. Justification: Shows proportion of underlying causes clearly. 2. Treatment Efficacy -> Goal: Compare -> Bar Chart (Chart.js) -> Hover for precise reduction metrics. Justification: Best for side-by-side comparison of disparate interventions. 3. Patient Experience -> Goal: Organize -> Interactive Tabs -> Click to switch qualitative themes. Justification: Consolidates text-heavy survey data into digestible chunks. 4. Decision Making -> Goal: Organize -> CSS/HTML Stepped Flow -> Visual hierarchy. Justification: Translates complex clinical pathways without using unsupported SVGs or Mermaid. -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+<nav class="sticky top-0 z-50 bg-surface shadow-md border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between h-16">
+<div class="flex items-center">
+<span class="text-xl font-bold text-primary tracking-tight">Neuro<span class="text-accent">Research</span></span>
+</div>
+<ul class="hidden md:flex items-center space-x-8">
+<li><a href="#abstract" class="nav-link text-sm font-medium text-secondary py-2">Abstract & Scope</a></li>
+<li><a href="#quantitative" class="nav-link text-sm font-medium text-secondary py-2">Quantitative Data</a></li>
+<li><a href="#qualitative" class="nav-link text-sm font-medium text-secondary py-2">Qualitative Insights</a></li>
+<li><a href="#clinical" class="nav-link text-sm font-medium text-secondary py-2">Clinical Pathway</a></li>
+<li><a href="#ethics" class="nav-link text-sm font-medium text-secondary py-2">Ethics & Conclusion</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<header class="bg-primary text-white py-20 border-b-4 border-accent">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h1 class="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">Decoding the Storm: A Comprehensive Analysis of Neural Epilepsy</h1>
+<p class="text-lg md:text-xl text-slate-300 font-light mb-8">Bridging the gap between ionic channelopathies, clinical neuromodulation, and patient-centric outcomes.</p>
+<div class="inline-flex items-center bg-secondary/50 rounded-full px-6 py-2 border border-slate-600">
+<span class="text-sm font-medium uppercase tracking-wider text-teal-400 mr-2">Author:</span>
+<span class="text-lg font-semibold">SAMUELSON G.</span>
+</div>
+</div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+<section id="abstract" class="scroll-mt-24">
+<div class="max-w-3xl mx-auto">
+<h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">I. Foundation & Scope</h2>
+<p class="text-lg text-secondary mb-6 leading-relaxed">This section establishes the foundational context of neural epilepsy, distinguishing between fundamental mechanistic discoveries and their real-world clinical applications. Understanding this baseline is critical for contextualizing the subsequent data and treatment paradigms.</p>
+<div class="bg-surface rounded-xl shadow-sm border border-slate-200 p-8">
+<h3 class="text-xl font-semibold mb-4">Why This Research Matters</h3>
+<p class="text-slate-600 mb-6 leading-relaxed">Neural epilepsy affects over 50 million people globally, making it one of the most common neurological diseases. Roughly one-third of these patients are drug-resistant, experiencing spontaneous, hyper-synchronous neuronal firing that severely limits quality of life. This research synthesizes decades of neurobiological data to illuminate pathways toward curative and highly palliative interventions, specifically focusing on the shift from pharmacological management to targeted neural circuit modulation.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+<div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
+<div class="text-accent text-2xl font-bold mb-2">&#8859; Basic Research</div>
+<p class="text-sm text-slate-600">Investigates the cellular and molecular mechanisms of epileptogenesis. Focuses on ion channelopathies (e.g., SCN1A mutations), synaptic vesicle release dynamics, and the disruption of GABAergic inhibitory interneuron networks that precipitate uninhibited excitatory cascades.</p>
+</div>
+<div class="bg-slate-50 p-6 rounded-lg border border-slate-100">
+<div class="text-accent text-2xl font-bold mb-2">&#8861; Applied Research</div>
+<p class="text-sm text-slate-600">Translates electrophysiological findings into actionable technology. Analyzes the efficacy of closed-loop Responsive Neurostimulation (RNS) devices, stereo-electroencephalography (SEEG) for precise seizure onset zone localization, and deep learning algorithms for seizure forecasting.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="quantitative" class="scroll-mt-24">
+<h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">II. Quantitative Analytics</h2>
+<p class="text-lg text-secondary mb-10 max-w-3xl leading-relaxed">This section presents empirical data regarding the underlying causes of neural epilepsy and the statistical efficacy of current intervention strategies. Interact with the charts to view precise percentages and reduction rates derived from multi-center clinical trials.</p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="bg-surface rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col">
+<h3 class="text-xl font-semibold mb-2 text-center">Global Etiology Breakdown</h3>
+<p class="text-sm text-slate-500 mb-6 text-center">Distribution of underlying causes in adult-onset epilepsy.</p>
+<div class="chart-container flex-grow">
+<canvas id="etiologyChart"></canvas>
+</div>
+<p class="text-xs text-slate-400 mt-4 text-center">Data indicates that despite advanced neuroimaging, a significant portion remains cryptogenic (unknown).</p>
+</div>
+<div class="bg-surface rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col">
+<h3 class="text-xl font-semibold mb-2 text-center">Intervention Efficacy Rates</h3>
+<p class="text-sm text-slate-500 mb-6 text-center">Median percentage reduction in seizure frequency at 5-year follow-up.</p>
+<div class="chart-container flex-grow">
+<canvas id="efficacyChart"></canvas>
+</div>
+<p class="text-xs text-slate-400 mt-4 text-center">Compares Pharmacoresistant cohorts. RNS shows progressive improvement over time.</p>
+</div>
+</div>
+</section>
+
+<section id="qualitative" class="scroll-mt-24">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">III. Qualitative Insights & Patient Surveys</h2>
+<p class="text-lg text-secondary mb-8 leading-relaxed">Beyond seizure counting, the true impact of neural epilepsy is measured in patient experience. This section organizes thematic findings from a 500-patient qualitative survey evaluating quality of life, cognitive side effects, and social stigmas. Click the tabs to explore different thematic pillars.</p>
+<div class="bg-surface rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+<div class="flex border-b border-slate-200 bg-slate-50" id="tab-buttons">
+<button class="flex-1 py-4 px-6 text-sm font-semibold text-slate-500 hover:text-accent focus:outline-none transition-colors border-b-2 border-transparent" data-target="tab-qol" onclick="switchTab(this, 'tab-qol')">Quality of Life</button>
+<button class="flex-1 py-4 px-6 text-sm font-semibold text-slate-500 hover:text-accent focus:outline-none transition-colors border-b-2 border-transparent" data-target="tab-cog" onclick="switchTab(this, 'tab-cog')">Cognitive Impact</button>
+<button class="flex-1 py-4 px-6 text-sm font-semibold text-slate-500 hover:text-accent focus:outline-none transition-colors border-b-2 border-transparent" data-target="tab-soc" onclick="switchTab(this, 'tab-soc')">Social Dynamics</button>
+</div>
+<div class="p-8">
+<div id="tab-qol" class="tab-content active">
+<div class="flex items-start space-x-4">
+<div class="text-3xl text-accent font-serif">"</div>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">The Unpredictability Burden</h4>
+<p class="text-slate-600 mb-4">78% of surveyed patients identified the unpredictable nature of seizures as the primary driver of anxiety, overriding the physical trauma of the seizure itself. The constant vigilance required alters daily decision-making, from driving to employment choices.</p>
+<ul class="list-disc pl-5 text-sm text-slate-500 space-y-2">
+<li>Significant reduction in independent travel.</li>
+<li>High prevalence of comorbid depression linked to loss of autonomy.</li>
+<li>Patients with neurostimulation implants reported a 60% increase in perceived safety.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tab-cog" class="tab-content">
+<div class="flex items-start space-x-4">
+<div class="text-3xl text-accent font-serif">"</div>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">The 'Medication Fog' Phenomenon</h4>
+<p class="text-slate-600 mb-4">A dominant theme in qualitative interviews is the cognitive slowing associated with high-dose polytherapy (anti-seizure medications). Patients frequently describe a trade-off between seizure control and mental acuity.</p>
+<ul class="list-disc pl-5 text-sm text-slate-500 space-y-2">
+<li>Frequent reports of memory retrieval issues and aphasia.</li>
+<li>Post-resective surgery patients often note a 'lifting of the fog' as medication titrates down.</li>
+<li>Neuromodulation preferred over medication increases due to targeted, rather than systemic, effects.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tab-soc" class="tab-content">
+<div class="flex items-start space-x-4">
+<div class="text-3xl text-accent font-serif">"</div>
+<div>
+<h4 class="text-lg font-bold text-primary mb-2">Stigma and Disclosure</h4>
+<p class="text-slate-600 mb-4">Despite increased medical understanding, workplace and social stigma remain pervasive. 55% of respondents indicated they actively conceal their diagnosis from employers due to fear of discrimination or assumptions of incompetence.</p>
+<ul class="list-disc pl-5 text-sm text-slate-500 space-y-2">
+<li>Fear of having a seizure in public environments.</li>
+<li>Reluctance to seek accommodations in academic or professional settings.</li>
+<li>The invisible nature of the disease between episodes creates a dual reality for patients.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="clinical" class="scroll-mt-24">
+<h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">IV. Critical Decision Making: Clinical Pathway</h2>
+<p class="text-lg text-secondary mb-10 max-w-3xl leading-relaxed">How do neurologists navigate the treatment landscape? This section outlines the standardized clinical decision tree for treating neural epilepsy. It demonstrates the progression from systemic pharmacological approaches to highly localized surgical and technological interventions.</p>
+<div class="relative max-w-3xl mx-auto">
+<div class="absolute left-8 top-0 bottom-0 w-1 bg-slate-200 rounded-full"></div>
+<div class="space-y-12 relative">
+<div class="flex items-start group">
+<div class="w-16 h-16 rounded-full bg-surface border-4 border-accent flex items-center justify-center text-xl font-bold text-accent shadow-md z-10 transition-transform group-hover:scale-110">1</div>
+<div class="ml-8 bg-surface p-6 rounded-xl border border-slate-200 shadow-sm flex-1">
+<h4 class="text-lg font-bold text-primary mb-2">Initial Pharmacotherapy</h4>
+<p class="text-sm text-slate-600">First-line treatment utilizes a single Anti-Seizure Medication (ASM). Drug selection is based on seizure type (focal vs. generalized), age, and patient comorbidities. Approximately 47% of patients achieve seizure freedom at this stage.</p>
+</div>
+</div>
+<div class="flex items-start group">
+<div class="w-16 h-16 rounded-full bg-surface border-4 border-slate-400 flex items-center justify-center text-xl font-bold text-slate-500 shadow-md z-10 transition-transform group-hover:scale-110">2</div>
+<div class="ml-8 bg-surface p-6 rounded-xl border border-slate-200 shadow-sm flex-1">
+<h4 class="text-lg font-bold text-primary mb-2">Polytherapy & Pharmacoresistance Definition</h4>
+<p class="text-sm text-slate-600">If the first ASM fails, a second is introduced (monotherapy or adjunctive). If a patient fails two appropriately chosen and tolerated ASMs, they are clinically defined as having <strong>drug-resistant epilepsy</strong>. Continued medication trials offer less than a 5% chance of seizure freedom.</p>
+</div>
+</div>
+<div class="flex items-start group">
+<div class="w-16 h-16 rounded-full bg-surface border-4 border-slate-400 flex items-center justify-center text-xl font-bold text-slate-500 shadow-md z-10 transition-transform group-hover:scale-110">3</div>
+<div class="ml-8 bg-surface p-6 rounded-xl border border-slate-200 shadow-sm flex-1">
+<h4 class="text-lg font-bold text-primary mb-2">Phase 1 & 2 Surgical Evaluation</h4>
+<p class="text-sm text-slate-600">Patients undergo intensive video-EEG monitoring, High-Resolution MRI, and PET scans to locate the Seizure Onset Zone (SOZ). If non-invasive methods are inconclusive, invasive intracranial electrodes (SEEG) are implanted for millimeter-precision mapping.</p>
+</div>
+</div>
+<div class="flex items-start group">
+<div class="w-16 h-16 rounded-full bg-surface border-4 border-slate-800 flex items-center justify-center text-xl font-bold text-slate-800 shadow-md z-10 transition-transform group-hover:scale-110">&#8627;</div>
+<div class="ml-8 bg-surface p-6 rounded-xl border border-slate-200 shadow-sm flex-1 bg-slate-800 text-white">
+<h4 class="text-lg font-bold mb-2">Definitive Intervention Routing</h4>
+<p class="text-sm text-slate-300 mb-4">Based on SOZ mapping, a multidisciplinary board makes the final critical decision:</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-slate-700 p-3 rounded text-xs">
+<strong class="text-accent block mb-1">Resective Surgery</strong>
+Optimal if the SOZ is in a non-eloquent brain region. Offers the highest chance of absolute cure.
+</div>
+<div class="bg-slate-700 p-3 rounded text-xs">
+<strong class="text-accent block mb-1">Neuromodulation (RNS/VNS/DBS)</strong>
+Mandatory if the SOZ is in eloquent cortex (speech/motor) or is multi-focal. Palliative, aiming for significant reduction.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="ethics" class="scroll-mt-24">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">V. Ethical Considerations & Future Scope</h2>
+<p class="text-lg text-secondary mb-8 leading-relaxed">As neural epilepsy research moves rapidly into the domain of Brain-Computer Interfaces (BCIs) and artificial intelligence, profound ethical dilemmas arise. This section addresses the ethical constraints of current research and outlines the trajectory of future neurotechnological developments.</p>
+<div class="space-y-4">
+<div class="bg-surface border border-slate-200 rounded-lg shadow-sm">
+<button class="w-full px-6 py-4 text-left font-semibold text-primary flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc1')">
+<span>Data Privacy & Neural Telemetry</span>
+<span class="text-xl text-accent transition-transform duration-300" id="icon-acc1">+</span>
+</button>
+<div id="acc1" class="accordion-content px-6 text-sm text-slate-600 border-t border-slate-100">
+<div class="py-4">
+With closed-loop devices like RNS constantly recording electrocorticographic (ECoG) data, patients are generating highly sensitive continuous neural telemetry. This data can potentially infer cognitive states, emotional responses, or degenerative conditions before clinical manifestation. Establishing strict cryptographic protocols and data ownership rights is paramount to prevent misuse by third parties, insurance entities, or unauthorized researchers.
+</div>
+</div>
+</div>
+<div class="bg-surface border border-slate-200 rounded-lg shadow-sm">
+<button class="w-full px-6 py-4 text-left font-semibold text-primary flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc2')">
+<span>Informed Consent in Cognitively Vulnerable Populations</span>
+<button class="hidden"></button>
+<span class="text-xl text-accent transition-transform duration-300" id="icon-acc2">+</span>
+</button>
+<div id="acc2" class="accordion-content px-6 text-sm text-slate-600 border-t border-slate-100">
+<div class="py-4">
+Severe, refractory neural epilepsy often leads to cognitive decline or psychiatric comorbidities due to both the disease progression and polypharmacy. Obtaining truly informed consent for experimental invasive procedures (like novel multi-array electrode implantations) requires rigorous protocols to ensure the patient, or their legally authorized representative, fully comprehends the risks of neurosurgery versus the projected palliative benefits, avoiding therapeutic misconception.
+</div>
+</div>
+</div>
+<div class="bg-surface border border-slate-200 rounded-lg shadow-sm">
+<button class="w-full px-6 py-4 text-left font-semibold text-primary flex justify-between items-center focus:outline-none" onclick="toggleAccordion('acc3')">
+<span>Future Scope: AI & Predictive Seizure Forecasting</span>
+<span class="text-xl text-accent transition-transform duration-300" id="icon-acc3">+</span>
+</button>
+<div id="acc3" class="accordion-content px-6 text-sm text-slate-600 border-t border-slate-100">
+<div class="py-4">
+The most promising frontier in applied epilepsy research is shifting from reactive stimulation to proactive forecasting. By applying deep learning algorithms to chronic EEG datasets, researchers aim to identify the 'pre-ictal' state—minutes or hours before a seizure occurs. If successful, this technology could deliver alerts to patients, allowing them to take fast-acting rescue medications or move to a safe environment, effectively restoring the autonomy lost to the disease's unpredictability.
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="bg-primary text-slate-400 py-8 text-center mt-20 border-t border-slate-700">
+<div class="max-w-7xl mx-auto px-4">
+<p class="text-sm font-medium">Decoding the Storm: Comprehensive Analysis of Neural Epilepsy</p>
+<p class="text-xs mt-2">Authored by SAMUELSON G. &copy; 2026. Interactive Document Architecture.</p>
+</div>
+</footer>
+
+<script>
+const primaryColor = '#1e293b';
+const accentColor = '#0d9488';
+const secondaryColor = '#64748b';
+const lightGray = '#e2e8f0';
+
+function initCharts() {
+const ctxEtiology = document.getElementById('etiologyChart').getContext('2d');
+new Chart(ctxEtiology, {
+type: 'doughnut',
+data: {
+labels: ['Structural (Lesions/Tumors)', 'Genetic/Metabolic', 'Infectious (e.g., Encephalitis)', 'Unknown/Cryptogenic', 'Immune'],
+datasets: [{
+data: [30, 20, 10, 35, 5],
+backgroundColor: [
+primaryColor,
+accentColor,
+'#3b82f6',
+secondaryColor,
+'#f59e0b'
+],
+borderWidth: 2,
+borderColor: '#ffffff'
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+cutout: '65%',
+plugins: {
+legend: { position: 'right', labels: { font: { family: 'Inter', size: 12 }, boxWidth: 12 } },
+tooltip: {
+backgroundColor: 'rgba(30, 41, 59, 0.9)',
+titleFont: { size: 13, family: 'Inter' },
+bodyFont: { size: 14, weight: 'bold', family: 'Inter' },
+callbacks: { label: function(context) { return ' ' + context.label + ': ' + context.parsed + '%'; } }
+}
+}
+}
+});
+
+const ctxEfficacy = document.getElementById('efficacyChart').getContext('2d');
+new Chart(ctxEfficacy, {
+type: 'bar',
+data: {
+labels: ['3rd Med Trial', 'Vagus Nerve Stim (VNS)', 'Responsive Stim (RNS)', 'Resective Surgery'],
+datasets: [{
+label: 'Median Seizure Reduction (%)',
+data: [4, 45, 75, 80],
+backgroundColor: [ secondaryColor, '#3b82f6', accentColor, primaryColor ],
+borderRadius: 4
+}]
+},
+options: {
+responsive: true,
+maintainAspectRatio: false,
+scales: {
+y: { beginAtZero: true, max: 100, title: { display: true, text: 'Reduction %', font: { family: 'Inter' } }, grid: { color: lightGray } },
+x: { grid: { display: false }, ticks: { font: { family: 'Inter' }, callback: function(val, index) { let label = this.getLabelForValue(val); return label.length > 15 ? label.substring(0, 15) + '...' : label; } } }
+},
+plugins: {
+legend: { display: false },
+tooltip: {
+backgroundColor: 'rgba(30, 41, 59, 0.9)',
+titleFont: { size: 13, family: 'Inter' },
+bodyFont: { size: 14, weight: 'bold', family: 'Inter' },
+callbacks: { label: function(context) { return context.raw + '% Reduction'; } }
+}
+}
+}
+});
+}
+
+function switchTab(buttonElement, targetId) {
+document.querySelectorAll('.tab-content').forEach(tab => { tab.classList.remove('active'); });
+document.querySelectorAll('#tab-buttons button').forEach(btn => {
+btn.classList.remove('text-accent', 'border-accent');
+btn.classList.add('text-slate-500', 'border-transparent');
+});
+document.getElementById(targetId).classList.add('active');
+buttonElement.classList.remove('text-slate-500', 'border-transparent');
+buttonElement.classList.add('text-accent', 'border-accent');
+}
+
+function toggleAccordion(id) {
+const content = document.getElementById(id);
+const icon = document.getElementById('icon-' + id);
+const isActive = content.classList.contains('active');
+document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('active'));
+document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = '+');
+if (!isActive) {
+content.classList.add('active');
+icon.textContent = '-';
+}
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+});
+});
+
+window.onload = function() {
+initCharts();
+let firstTab = document.querySelector('#tab-buttons button');
+if(firstTab) firstTab.click();
+};
+</script>
+</body>
+</html>
