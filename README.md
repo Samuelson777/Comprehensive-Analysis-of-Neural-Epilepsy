@@ -23,7 +23,7 @@ This repository hosts the interactive digital publication of the conceptual rese
 * **Ethical Considerations Accordion:** Expandable sections addressing data privacy, BCI telemetry, and informed consent.
 * **Fully Responsive Design:** Built with Tailwind CSS to ensure readability across mobile, tablet, and desktop devices.
 
-## 🚀 Installation & Usage
+## 🚀 Usage
 Because this is a vanilla HTML/JS/CSS application, there are no build steps, package managers, or dependencies to install. 
 
 1. Run the application:
